@@ -1,0 +1,19 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: smarchWatch_V5.PcbDoc   2/15/2019  5:17:40 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : smarchWatch_V5.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      8mil (0.203mm)                                            Round             76        PTH        0.00inch (0.00mm)
+T2      10mil (0.254mm)                                           Round             4         PTH        0.00inch (0.00mm)
+T3      12mil (0.305mm)                                           Round             48        PTH        0.00inch (0.00mm)
+T4      40mil (1.021mm)                                           Round             1         PTH        0.00inch (0.00mm)
+T5      79mil (1.999mm)                                           Round             2         PTH        0.00inch (0.00mm)
+T6      94mil (2.4mm)                                             Round             2         NPTH       0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              133
+
+Total Processing Time (hh:mm:ss) : 00:00:00

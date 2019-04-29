@@ -1,0 +1,11 @@
+LDSCRIPT_PATH=../ldscripts
+
+.PHONY: main-build pre-build generate_ldscripts FORCE
+main-build : | pre-build
+
+FORCE:
+
+generate_ldscripts : mem.ld sections.ld
+
+%.ld : $(LDSCRIPT_PATH)/%.ld.h FORCE
+	"$(CC)" -I "$(BSP_CONFIG_DIR)" $(PRE_BUILD_EXTRA_DEFS) -include "$(APP_CONFIG_H)" $(LD_DEFS) -Ddg_configBLACK_ORCA_IC_REV=BLACK_ORCA_IC_REV_$(IC_REV) -Ddg_configBLACK_ORCA_IC_STEP=BLACK_ORCA_IC_STEP_$(IC_STEP) -E -P -c "$<" -o "$@"

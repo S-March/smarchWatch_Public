@@ -1,0 +1,14 @@
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\bin\Debug\bitmapToArray.exe.config
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\bin\Debug\bitmapToArray.exe
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\bin\Debug\bitmapToArray.pdb
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\obj\Debug\bitmapToArray.csprojAssemblyReference.cache
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\obj\Debug\bitmapToArray.Properties.Resources.resources
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\obj\Debug\bitmapToArray.csproj.GenerateResource.cache
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\obj\Debug\bitmapToArray.csproj.CoreCompileInputs.cache
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\obj\Debug\bitmapToArray.exe
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\obj\Debug\bitmapToArray.pdb
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\obj\Debug\bitmapToArray.bitmapToArray.resources
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\bin\Debug\bitmapToArray.exe.manifest
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\bin\Debug\bitmapToArray.application
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\obj\Debug\bitmapToArray.exe.manifest
+C:\Users\samsonm\Documents\GitHub\smarchWatch\Software\bitmapToArray\bitmapToArray\bitmapToArray\obj\Debug\bitmapToArray.application
