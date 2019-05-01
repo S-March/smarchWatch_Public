@@ -75,19 +75,16 @@ PRIVILEGED_DATA static struct {
 
 static void notify_client(void)
 {
-        if (!line.len) {
-                goto done;
-        }
+        if (line.len) {
 
-        line.buf[line.len] = '\0';
+                line.buf[line.len] = '\0';
 
-        if (OS_QUEUE_PUT(reg_client.queue, &line.buf, OS_QUEUE_NO_WAIT) != OS_QUEUE_OK) {
-                OS_FREE(line.buf);
-        } else {
-                OS_TASK_NOTIFY(reg_client.task, reg_client.notif_mask, OS_NOTIFY_SET_BITS);
-        }
-
-done:
+                if (OS_QUEUE_PUT(reg_client.queue, &line.buf, OS_QUEUE_NO_WAIT) != OS_QUEUE_OK) {
+                        OS_FREE(line.buf);
+                } else {
+                        OS_TASK_NOTIFY(reg_client.task, reg_client.notif_mask, OS_NOTIFY_SET_BITS);
+                }
+        }       
         line.buf = OS_MALLOC(LINEBUF_SIZE + 1);
         line.len = 0;
 }
