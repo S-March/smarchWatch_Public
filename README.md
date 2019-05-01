@@ -6,4 +6,6 @@ I decided sometime last year that I wanted to make a smart watch from scratch. I
 
 ## For more info on the build process, [click here](https://imgur.com/a/FSBwD3g).
 
+## For any ideas or things you wish could be in the project [click here](https://github.com/S-March/smarchWatch_PUBLIC/issues/15)
+
 ![smarchWatch](glamourShot.jpg)
