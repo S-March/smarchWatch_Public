@@ -78,22 +78,22 @@ static PRIVILEGED_DATA console_data_t console;
 static void console_write_to_ring_buffer(const char *ptr, int len)
 {
         console.fifo_free -= len;
-        if (console.fifo_wrix + len > sizeof(console.ring_buf)) {
+        if (console.fifo_wrix + len > RINGBUF_SIZE) {
                 /*
                  * This is case when some data must be written at the end of ring buffer.
                  * and some from the beginning.
                  */
                 int left;
                 memcpy(console.ring_buf + console.fifo_wrix, ptr,
-                                                        sizeof(console.ring_buf) - console.fifo_wrix);
-                left  = len - (sizeof(console.ring_buf) - console.fifo_wrix);
-                memcpy(console.ring_buf, ptr + sizeof(console.ring_buf) - console.fifo_wrix, left);
+                                                        RINGBUF_SIZE - console.fifo_wrix);
+                left  = len - (RINGBUF_SIZE - console.fifo_wrix);
+                memcpy(console.ring_buf, ptr + RINGBUF_SIZE - console.fifo_wrix, left);
                 console.fifo_wrix = left;
         } else {
                 /* Simple case without overlap */
                 memcpy(console.ring_buf + console.fifo_wrix, ptr, len);
                 console.fifo_wrix += len;
-                if (console.fifo_wrix >= sizeof(console.ring_buf)) {
+                if (console.fifo_wrix >= RINGBUF_SIZE) {
                         console.fifo_wrix = 0;
                 }
         }
@@ -203,8 +203,8 @@ static void console_write_cb(void *user_data, uint16_t transferred)
 
         /* Move read index and increase free FIFO counter */
         console->fifo_rdix += transferred;
-        if (console->fifo_rdix >= sizeof(console->ring_buf)) {
-                console->fifo_rdix -= sizeof(console->ring_buf);
+        if (console->fifo_rdix >= RINGBUF_SIZE) {
+                console->fifo_rdix -= RINGBUF_SIZE;
         }
         console->fifo_free += transferred;
         console->fifo_blocked = false;
@@ -251,7 +251,7 @@ static void console_task_fun(void *param)
                  * Ring buffer has some new data that should go to UART.
                  */
                 if (0 != (current_requests & CONSOLE_WRITE_REQUEST) &&
-                                                        console.fifo_free < sizeof(console.ring_buf)) {
+                                                        console.fifo_free < RINGBUF_SIZE) {
                         uint16_t wx = console.fifo_wrix;
                         uint16_t size = 0;
                         if (console.fifo_rdix < wx) {
@@ -266,7 +266,7 @@ static void console_task_fun(void *param)
                                  * UART will print this part first, and after writing that,
                                  * data at the beginning will be printed.
                                  */
-                                size = sizeof(console.ring_buf) - console.fifo_rdix;
+                                size = RINGBUF_SIZE - console.fifo_rdix;
                                 /*
                                  * Write request was already cleared, but here asked for it again.
                                  * This request will be masked till UART writes finishes.
@@ -319,7 +319,7 @@ void console_init(void)
                 return;
         }
 
-        console.fifo_free = sizeof(console.ring_buf);
+        console.fifo_free = RINGBUF_SIZE;
         OS_MUTEX_CREATE(console.mutex);
         OS_EVENT_CREATE(console.fifo_not_full);
         OS_EVENT_CREATE(console.read_finished);
@@ -328,7 +328,7 @@ void console_init(void)
 }
 
 #ifdef CONFIG_RETARGET
-__attribute((externally_visible))
+__attribute__((externally_visible))
 int _write (int fd, char *ptr, int len)
 {
         console_write(ptr, len);
@@ -336,7 +336,7 @@ int _write (int fd, char *ptr, int len)
         return len;
 }
 
-__attribute((externally_visible))
+__attribute__((externally_visible))
 int _read (int fd, char *ptr, int len)
 {
         return console_read(ptr, 1);
