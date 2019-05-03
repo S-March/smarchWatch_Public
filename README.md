@@ -5,6 +5,8 @@ I decided sometime last year that I wanted to make a smart watch from scratch. I
 ![smarchWatch](glamourShot.jpg)
 
 ## Other Useful Links
+To download the SDK for the DA14683, you can [click this link](https://support.dialog-semiconductor.com/system/files/restricted/DA1468x_DA15xxx_SDK_1.0.14.1081.zip)
+
 If you want to order PCBs from the same place I did, you can [click this link](https://www.pcbway.com/project/shareproject/smarchWatch.html).
 
 For more info on the build process and a blog describing the process, [click here](https://imgur.com/a/FSBwD3g).
