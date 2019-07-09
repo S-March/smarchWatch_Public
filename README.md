@@ -1,6 +1,6 @@
 # smarchWatch_PUBLIC
 
-I decided sometime last year that I wanted to make a smart watch from scratch. I am an electrical engineer and product designer by day, so this was a fun side project that had been rolling around in my head for a while now.
+I decided sometime last year that I wanted to make a smart watch from scratch. I am an electrical engineer and product designer by day, so this was a fun side project that had been rolling around in my head for a while now. For future projects and progress pictures feel free to follow me on instagram @SamsonMarch
 
 ![smarchWatch](glamourShot.jpg)
 
